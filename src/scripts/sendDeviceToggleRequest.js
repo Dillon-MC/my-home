@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 function sendToggleRequest(device, status) {
     // Turn device ON or OFF
     return fetch("https://developer-api.govee.com/v1/devices/control", {
