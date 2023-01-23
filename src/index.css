@@ -1,0 +1,388 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.deviceGrid {
+  display: grid;
+  grid-template-columns: 15rem 15rem;
+  grid-template-rows: 15rem 15rem 15rem;
+  justify-content: center;
+  align-items: center;
+  grid-column-gap: 4rem;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background: inherit;
+  background-size: cover;
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+}
+
+.defaultTile {
+  width: 14rem;
+  height: 9rem;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 40px 60px 10px;
+  grid-template-columns: 100%;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.defaultTile::before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset -100px -100px 1000px rgba(125, 125, 125, 0.3), inset 40px 40px 90px rgba(123, 185, 255, 0.5);
+  filter: blur(10px);
+  margin: -20px;
+}
+
+.defaultTileLarger {
+  width: 16rem;
+  justify-self: left;
+}
+
+.clockTile {
+  margin-top: 40px;
+  width: 35rem;
+  height: 6rem;
+  grid-template-columns: 50% 3% 50%;
+  grid-template-rows: 100%;
+}
+
+.fanTile {
+  justify-self: center;
+  width: 7rem;
+  height: 13rem;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+  border-radius: 40px;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.fanTile::before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  box-shadow: inset -100px -100px 1000px rgba(125, 125, 125, 0.3);
+  filter: blur(10px);
+  margin: -20px;
+}
+
+.deviceIcon {
+  width: 60px;
+  height: 60px;
+  align-self: center;
+  justify-self: left;
+  margin-bottom: 60px;
+  margin-left: 20px;
+}
+
+.deviceIconFanTile {
+  margin: 0px;
+  justify-self: center;
+  align-self: center;
+}
+
+.powerBtn {
+  padding-left: 75%;
+  margin-top: 20px;
+  justify-self: left;
+  align-self: center;
+  scale: 0.25;
+}
+
+.powerBtnCheckbox {
+  visibility: hidden;
+}
+
+.button {
+  /* 	design the outer circle */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: transparent;
+  position: relative;
+  /* center the child elements */
+  display: grid;
+  place-items: center;
+  background-color: rgb(67, 67, 67);
+  box-shadow: rgba(0, 0, 0, 0.348) 0px 4px 8px;
+  scale: 100%;
+}
+
+.button::before {
+  /* pseudo-elements don't appear unless content property is declared */
+  content: "";
+
+  /* design the element */
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  border: 10px solid #eee;
+  position: absolute;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.bar {
+  height: 30%;
+  width: 10px;
+  background: #eee;
+  border-radius: 10px;
+  /* for rounded ends */
+  position: absolute;
+  top: 20px;
+  box-shadow: 0 0 0 10px rgb(67, 67, 67);
+  ;
+}
+
+.button:active {
+  background-color: rgb(56, 55, 55);
+}
+
+.button:active .bar {
+  box-shadow: 0 0 0 10px rgb(56, 55, 55);
+}
+
+.powerBtnCheckbox:checked~.button {
+  background-color: rgb(53, 106, 198);
+}
+
+.powerBtnCheckbox:checked~.button .bar {
+  box-shadow: 0 0 0 10px rgb(53, 106, 198);
+}
+
+.SmartTileTxt {
+  justify-self: left;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  font-family: monospace;
+  text-shadow: rgba(0, 0, 0, 0.4) 1px 2px 8px;
+  color: white;
+  font-weight: 600;
+  font-size: large;
+  display: grid;
+  grid-template-rows: 20px 20px;
+  grid-row-gap: 5px;
+}
+
+.deviceStatusTxt {
+  color: rgb(56, 56, 56);
+  font-weight: 300;
+  justify-self: left;
+}
+
+.windTxt {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: medium;
+  color: rgb(236, 245, 255);
+  text-align: center;
+}
+
+.weatherTile {
+  margin-top: 120px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 35% 55%;
+  grid-template-rows: 30% 30% 10px;
+  grid-row-gap: 10px;
+}
+
+.weatherIcon {
+  filter: drop-shadow(2px 3px 10px rgba(0, 0, 0, 0.75));
+  justify-self: center;
+}
+
+.currentTempTxt {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.4rem;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.35) 1px 2px 10px;
+  text-align: left;
+  font-style: normal;
+}
+
+.conditionTxt {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: medium;
+  color: rgb(247, 251, 255);
+  margin-bottom: 10px;
+  text-decoration: overline;
+  white-space: nowrap;
+  text-shadow: rgba(0, 0, 0, 0.15) 1px 2px 20px;
+  text-align: center;
+}
+
+.humidityTxt {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: larger;
+  color: rgb(94, 172, 250);
+  text-align: left;
+  display: grid;
+  grid-template-columns: 30px 40px;
+  align-items: center;
+}
+
+.feelsLikeTempTxt {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-style: normal;
+  font-size: small;
+  color: rgb(69, 69, 69);
+  text-shadow: rgba(112, 112, 112, 0.4) 1px 2px 3px;
+  text-align: left;
+}
+
+.clockTxt {
+  width: 220px;
+  color: white;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 4rem;
+  text-shadow: rgba(0, 0, 0, 0.27) 1px 2px 13px;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  margin: 0;
+  justify-self: left;
+  align-self: flex-start;
+  margin-left: 35px;
+  display: flex;
+}
+
+.pmTxt {
+  font-size: 2.5rem;
+  align-self: flex-end;
+  margin-bottom: 6px;
+  margin-left: 5px;
+}
+
+.dateContainer {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  width: 85%;
+  justify-self: right;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.dateTxt {
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  align-self: flex-end;
+  justify-self: right;
+  margin-right: 20px;
+  text-decoration: overline;
+}
+
+.dayTxt {
+  font-weight: 300;
+  font-size: large;
+  text-align: left;
+  height: 10px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+line {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  font-weight: 100;
+  color: white;
+}
+
+/* Larger screens */
+@media only screen and (min-height: 2000px) {
+  .deviceGrid {
+    grid-template-columns: 45rem 45rem;
+    grid-template-rows: 30rem 30rem;
+  }
+  
+  .defaultTile {
+    scale: 300%;
+  }
+
+  .clockTile {
+    scale: 350%;
+    width: 28%;
+    margin-top: 250px;
+  }
+
+  .defaultTileLarger {
+    scale: 350%;
+    justify-self: left;
+    margin-left: 340px;
+  }
+}
+
+/* Smaller screens */
+@media only screen and (max-height: 650px) {
+  .deviceGrid {
+    grid-template-columns: 15rem 15rem;
+    grid-template-rows: 10rem 10rem 10rem;
+  }
+  
+  .defaultTile {
+    scale: 85%;
+  }
+
+  .clockTile {
+    scale: 90%;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .defaultTileLarger {
+    scale: 90%;
+    justify-self: left;
+    margin-left: 22px;
+  }
+}

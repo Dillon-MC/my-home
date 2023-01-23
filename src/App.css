@@ -1,0 +1,144 @@
+.App {
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-row-gap: 1rem;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  background-image: url("./Images/ClearSkyDay.jpg");
+}
+
+/* Larger screens */
+@media only screen and (min-height: 2000px) { 
+  .App {
+    grid-row-gap: 0px;
+    grid-template-columns: 60%;
+    grid-template-rows: 20% 40%;
+  }
+}
+
+/* Smaller screens */
+@media only screen and (max-height: 650px) {
+  .App {
+    grid-row-gap: 0px;
+    grid-template-columns: 80%;
+  }
+}
+
+/*Day backgrounds*/
+.b01d9 {
+  background-image: url("./Images/ClearSkyDay.jpg");
+}
+
+.b02d9 {
+  background-image: url("./Images/PartlyCloudyDay.jpg");
+}
+
+.b03d9 {
+  background-image: url("./Images/CloudyDay.jpg");
+}
+
+.b04d9 {
+  background-image: url("./Images/BrokenCloudsDay.jpg");
+}
+
+.b09d9 {
+  background-image: url("./Images/RainDay.jpg");
+}
+
+.b10d9 {
+  background-image: url("./Images/RainDay.jpg");
+}
+
+.b11d9 {
+  background-image: url("./Images/ThunderstormDay.jpg");
+}
+
+.b13d9 {
+  background-image: url("./Images/SnowDay.jpg");
+}
+
+.b50d9 {
+  background-image: url("./Images/FogDay.jpg");
+}
+
+
+/*Evening backgrounds*/
+.b0117 {
+  background-image: url("./Images/ClearSkyEvening.jpg");
+}
+
+.b0217 {
+  background-image: url("./Images/PartlyCloudyEvening.jpg");
+}
+
+.b0317 {
+  background-image: url("./Images/CloudyEvening.jpg");
+}
+
+.b0417 {
+  background-image: url("./Images/BrokenCloudsEvening.jpg");
+}
+
+.b0917 {
+  background-image: url("./Images/RainEvening.jpg");
+}
+
+.b1017 {
+  background-image: url("./Images/RainEvening.jpg");
+}
+
+.b1117 {
+  background-image: url("./Images/ThunderstormEvening.jpg");
+}
+
+.b1317 {
+  background-image: url("./Images/SnowEvening.jpg");
+}
+
+.b5017 {
+  background-image: url("./Images/FogEvening.jpg");
+}
+
+
+/*Night backgrounds*/
+.b01n19 {
+  background-image: url("./Images/ClearSkyNight.jpg");
+}
+
+.b02n19 {
+  background-image: url("./Images/PartlyCloudyNight.jpg");
+}
+
+.b03n19 {
+  background-image: url("./Images/CloudyNight.jpg");
+}
+
+.b04n19 {
+  background-image: url("./Images/CloudyNight.jpg");
+}
+
+.b09n19 {
+  background-image: url("./Images/RainNight.jpg");
+}
+
+.b10n19 {
+  background-image: url("./Images/RainNight.jpg");
+}
+
+.b11n19 {
+  background-image: url("./Images/ThunderstormNight.jpg");
+}
+
+.b13n19 {
+  background-image: url("./Images/SnowNight.jpg");
+}
+
+.b50n19 {
+  background-image: url("./Images/FogNight.jpg");
+}
