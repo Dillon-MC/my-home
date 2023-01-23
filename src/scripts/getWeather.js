@@ -25,7 +25,7 @@ function getWeather() {
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=Fort Myers,US&lat=43.171661&lon=-81.490860&appid=2a2722df59cf85a3619e6626f9f2d980&units=imperial`, {
             headers: {
                 method: "GET",
-                headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+                headers: { 'Content-Type': 'application/json', },
             }
         }).then(res => res.json())
         .then(data => {

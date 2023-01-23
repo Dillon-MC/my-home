@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 //Icons
 import { WiRaindrop } from "weather-icons-react";
 import WeatherIcon from './WeatherIcon';
-import getWeather from '../scripts/getWeather';
 
 function WeatherTile(params) {
 
@@ -14,14 +13,14 @@ function WeatherTile(params) {
     // Only called once when page is loaded
     useEffect(() => {
         if(!state.currentTemp) {
-            getWeather().then(weatherData => setState(weatherData)).catch(err => console.log(err));
+            getWeather();
         }
     });
 
     // Refreshes weather data ever 30 minutes
     useEffect(() => {
         const interval = setInterval(() => {
-            getWeather().then(weatherData => setState(weatherData)).catch(err => console.log(err));
+            getWeather();
         }, 1800000);
         return () => clearInterval(interval);
     },[]);
@@ -95,19 +94,19 @@ function WeatherTile(params) {
         changeBackgroundColor();
     }, [state.icon, params]);
 
-    // function getWeather() {
-    //     console.log('Getting weather');
-    //     fetch(`https://my-home-backend.vercel.app/getWeather`, {
-    //         headers: {
-    //             method: "GET",
-    //             headers: { 'Content-Type': 'application/json' },
-    //             body: JSON.stringify()
-    //         }
-    //     })
-    //         .then(res => res.json())
-    //         .then(weatherData => setState(weatherData))
-    //         .catch(err => console.log(err));
-    // }
+    function getWeather() {
+        console.log('Getting weather');
+        fetch(`https://my-home-backend.vercel.app/getWeather`, {
+            headers: {
+                method: "GET",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify()
+            }
+        })
+            .then(res => res.json())
+            .then(weatherData => setState(weatherData))
+            .catch(err => console.log(err));
+    }
 
     function CapitalizeString(str) {
         if (str)
