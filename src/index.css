@@ -364,25 +364,14 @@ line {
 }
 
 /* Smaller screens */
-@media only screen and (max-height: 650px) {
+@media only screen and (max-height: 800px) {
   .deviceGrid {
     grid-template-columns: 15rem 15rem;
     grid-template-rows: 10rem 10rem 10rem;
   }
-  
-  .defaultTile {
-    scale: 85%;
-  }
 
   .clockTile {
-    scale: 90%;
     width: 100%;
     margin-top: 20px;
-  }
-
-  .defaultTileLarger {
-    scale: 90%;
-    justify-self: left;
-    margin-left: 22px;
   }
 }
