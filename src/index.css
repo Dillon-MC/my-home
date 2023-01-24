@@ -143,8 +143,6 @@ code {
   grid-template-rows: 150px;
   justify-content: center;
   align-items: center;
-  background: rgb(0,75,175);
-  background: linear-gradient(138deg, rgba(0,75,175,1) 0%, rgba(0,212,255,1) 100%);
   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 20px;
 }
 
@@ -153,7 +151,7 @@ code {
 }
 
 .powerBtnIcon {
-  scale: 24%;
+  /* scale: 24%; */
   color: #ffff;
 }
 
