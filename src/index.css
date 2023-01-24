@@ -140,54 +140,21 @@ code {
   position: relative;
   /* center the child elements */
   display: grid;
-  place-items: center;
-  background-color: rgb(67, 67, 67);
-  box-shadow: rgba(0, 0, 0, 0.348) 0px 4px 8px;
-  scale: 100%;
-}
-
-.button::before {
-  /* pseudo-elements don't appear unless content property is declared */
-  content: "";
-
-  /* design the element */
-  width: 50%;
-  height: 50%;
-  border-radius: 50%;
-  border: 10px solid #eee;
-  position: absolute;
+  grid-template-rows: 150px;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0,75,175);
+  background: linear-gradient(138deg, rgba(0,75,175,1) 0%, rgba(0,212,255,1) 100%);
+  box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 20px;
 }
 
 .button:hover {
   cursor: pointer;
 }
 
-.bar {
-  height: 30%;
-  width: 10px;
-  background: #eee;
-  border-radius: 10px;
-  /* for rounded ends */
-  position: absolute;
-  top: 20px;
-  box-shadow: 0 0 0 10px rgb(67, 67, 67);
-  ;
-}
-
-.button:active {
-  background-color: rgb(56, 55, 55);
-}
-
-.button:active .bar {
-  box-shadow: 0 0 0 10px rgb(56, 55, 55);
-}
-
-.powerBtnCheckbox:checked~.button {
-  background-color: rgb(53, 106, 198);
-}
-
-.powerBtnCheckbox:checked~.button .bar {
-  box-shadow: 0 0 0 10px rgb(53, 106, 198);
+.powerBtnIcon {
+  scale: 24%;
+  color: #ffff;
 }
 
 .SmartTileTxt {

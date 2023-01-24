@@ -4,6 +4,7 @@ import turnDeviceOn from "../scripts/turnDeviceOn";
 import turnDeviceOff from "../scripts/turnDeviceOff";
 import { getDevices } from "../scripts/dummyDB";
 import retrieveSpecificDevice from "../scripts/retrieveSpecificDevice";
+import powerBtnIcon from "../Images/powerBtnIcon.svg";
 
 function PowerButton(props) {
     const [state, setState] = useState({ device: { status: undefined } });
@@ -35,10 +36,13 @@ function PowerButton(props) {
     }
 
     return (
-        <label className="powerBtn">
-            <input type="checkbox" onChange={() => { }} checked={state.device.status === 'on' ? true : false} className="powerBtnCheckbox" onClick={() => toggleDevice(deviceName)} />
-            <div class="button">
-                <div class="bar"></div>
+        <label className="powerBtn" onClick={toggleDevice}>
+            {/* <input type="checkbox" onChange={() => { }} checked={state.device.status === 'on' ? true : false} className="powerBtnCheckbox" onClick={() => toggleDevice(deviceName)} /> */}
+            <div className="button" style={
+                state.device.status === 'off' 
+                ? {background: "rgb(27,27,27)", background: "linear-gradient(138deg, rgba(27,27,27,1) 0%, rgba(93,93,93,1) 100%)"}
+                : {background: "rgb(0,75,175)", background: "linear-gradient(138deg, rgba(0,75,175,1) 0%, rgba(0,212,255,1) 100%)"}}>
+                <img className="powerBtnIcon" src={powerBtnIcon} alt="" />
             </div>
         </label>
     );
