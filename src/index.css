@@ -124,25 +124,19 @@ code {
   margin-top: 20px;
   justify-self: left;
   align-self: center;
-  scale: 0.25;
-}
-
-.powerBtnCheckbox {
-  visibility: hidden;
 }
 
 .button {
   /* 	design the outer circle */
-  width: 150px;
-  height: 150px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: transparent;
   position: relative;
   /* center the child elements */
   display: grid;
-  grid-template-rows: 150px;
+  align-content: center;
   justify-content: center;
-  align-items: center;
   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 20px;
 }
 
@@ -151,7 +145,6 @@ code {
 }
 
 .powerBtnIcon {
-  /* scale: 24%; */
   color: #ffff;
 }
 
