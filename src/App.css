@@ -11,6 +11,7 @@
   padding: 0px;
   height: 100vh;
   background-image: url("./Images/ClearSkyDay.jpg");
+  overflow: hidden;
 }
 
 /* Larger screens */
@@ -26,7 +27,7 @@
 @media only screen and (max-height: 590px) {
   .App {
     grid-row-gap: 0px;
-    grid-template-columns: 50%;
+    grid-template-columns: 60%;
   }
 }
 
