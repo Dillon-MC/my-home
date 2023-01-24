@@ -119,7 +119,7 @@ function WeatherTile(params) {
                 boxShadow: `inset -100px -100px 1000px rgba(${bgColor.color1}, 0.5), inset 40px 40px 90px ${bgColor.color2}`
             }
         })}>
-            <div className='weatherTile'>
+            <div className='weatherTile' onClick={getWeather}>
                 <i className='currentTempTxt'>{Math.round(state.currentTemp) + '\u00b0'}</i>
                 {WeatherIcon(state.icon)}
                 <i className='feelsLikeTempTxt'>Feels like {Math.round(state.feelsLikeTemp) + '\u00b0'}</i>
