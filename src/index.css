@@ -364,14 +364,16 @@ line {
 }
 
 /* Smaller screens */
-@media only screen and (max-height: 800px) {
+@media only screen and (max-height: 590px) {
   .deviceGrid {
     grid-template-columns: 15rem 15rem;
     grid-template-rows: 10rem 10rem 10rem;
+    margin-top: 20px;
   }
 
   .clockTile {
     width: 100%;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
 }

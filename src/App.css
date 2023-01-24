@@ -23,10 +23,10 @@
 }
 
 /* Smaller screens */
-@media only screen and (max-height: 650px) {
+@media only screen and (max-height: 590px) {
   .App {
     grid-row-gap: 0px;
-    grid-template-columns: 80%;
+    grid-template-columns: 50%;
   }
 }
 
